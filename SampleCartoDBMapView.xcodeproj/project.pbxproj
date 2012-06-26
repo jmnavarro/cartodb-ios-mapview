@@ -336,6 +336,7 @@
 				8849C1C61599C0EF00620991 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
