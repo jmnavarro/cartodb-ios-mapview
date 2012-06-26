@@ -38,8 +38,7 @@ static const int kBlocks = 4;
     float tileStartX = floorf(tileX/tileWidth)  * tileWidth;
     float tileStartY = floorf(tileY/tileHeight) * tileHeight;
 
-    MKMapRect visibleMapRect = MKMapRectMake(tileStartX, tileStartY,
-tileWidth * (kBlocks+1), tileHeight * (kBlocks+1));
+    MKMapRect visibleMapRect = MKMapRectMake(tileStartX, tileStartY, tileWidth * (kBlocks+1), tileHeight * (kBlocks+1));
     
     for (id<MKAnnotation> point in annotations) {
         MKMapPoint mapPoint = MKMapPointForCoordinate(point.coordinate);
