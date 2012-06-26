@@ -1,0 +1,3 @@
+[submodule "cartodb-objectivec-client"]
+	path = cartodb-objectivec-client
+	url = git://github.com/jmnavarro/cartodb-objectivec-client.git
