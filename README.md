@@ -7,7 +7,6 @@ Pending tasks:
 
  - Current code is detached and does't use CartoDB API. Should query the database using [cartodb-objectivec-client](https://github.com/jmnavarro/cartodb-objectivec-client)
  - Clusters size should depend on its number
- - Use [tiles API of CartoDB](http://developers.cartodb.com/documentation/cartodb-apis.html#maps_api)
 
 Screenshots:
 
