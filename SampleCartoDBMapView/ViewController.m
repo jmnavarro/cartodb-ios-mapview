@@ -12,6 +12,12 @@
 #import "CartoDBMapView.h"
 #import "MKMapView+Utils.h"
 #import "macros.h"
+#import "NSError+Log.h"
+#import "CartoDBCredentials.h"
+
+
+
+static NSString* const kCartoDBUser = @"YOUR_CARTODB_USER"; // <-- Put your cartoDB user here
 
 
 static CGPoint kPOIs[] = {
@@ -33,43 +39,54 @@ static CGPoint kPOIs[] = {
 };
 
 
-
 @implementation ViewController
 
 @synthesize mapView = _mapView;
+@synthesize sql = _sql;
 
 
-- (void)viewDidLoad
+- (IBAction) queryServer
 {
-    [super viewDidLoad];
+    [self.sql resignFirstResponder];
     
-    self.mapView.delegate = self;
-
-    CLLocationCoordinate2D coordinate = {41.498293, -5.256207};
-    self.mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 1000000, 1000000);
-    
-    NSMutableArray *pois = [[NSMutableArray alloc] initWithCapacity:16];
-    
-    for (int i=0; i < ARRAY_LEN(kPOIs); ++i) {
-        CGFloat lat = kPOIs[i].x;
-        CGFloat lon = kPOIs[i].y;
+    if (self.sql.text.length == 0) {
+        CLLocationCoordinate2D coordinate = {41.498293, -5.256207};
+        self.mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 1000000, 1000000);
         
-        CartoDBPOI *poi = [[CartoDBPOI alloc] initWithLocation:(CLLocationCoordinate2D){lat, lon}];
-        poi.title = [NSString stringWithFormat:@"lat=%f lon=%f", lat, lon];;
-        [pois addObject:poi];
-        [poi release]; 
+        NSMutableArray *pois = [[NSMutableArray alloc] initWithCapacity:16];
+        
+        for (int i=0; i < ARRAY_LEN(kPOIs); ++i) {
+            CGFloat lat = kPOIs[i].x;
+            CGFloat lon = kPOIs[i].y;
+            
+            CartoDBPOI *poi = [[CartoDBPOI alloc] initWithLocation:(CLLocationCoordinate2D){lat, lon}];
+            poi.title = [NSString stringWithFormat:@"lat=%f lon=%f", lat, lon];;
+            [pois addObject:poi];
+            [poi release]; 
+        }
+        
+        [self.mapView addAnnotations:pois];
+        
+        [pois release];
+    } else {
+        CartoDBCredentials *c = [[CartoDBCredentials alloc] init];
+        c.username = kCartoDBUser;
+        self.mapView.credentials = c;
+        [c release];
+        
+        if (![self.mapView startRequestWithSQL:self.sql.text]) {
+            NSLog(@"Cant start request");
+        }
     }
-    
-    [self.mapView addAnnotations:pois];
-    
-    [pois release];
 }
+
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
 
     self.mapView = nil;
+    self.sql = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -112,6 +129,18 @@ static CGPoint kPOIs[] = {
     }
     
     return view;
+}
+
+
+- (bool) mapView:(CartoDBMapView*)mapView receivedPOIs:(NSMutableArray*)poiList
+{
+    [mapView centerForPOIs:poiList animated:YES];
+    return YES;
+}
+
+- (void) mapView:(CartoDBMapView*)mapView failedRequestWithError:(NSError*)err
+{
+    NSLog(@"%@", [err stringWithFormat:@"Error running sql"]);
 }
 
 @end

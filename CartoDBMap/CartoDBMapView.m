@@ -1,6 +1,6 @@
 //
-//  CartoDBClusterMapView.m
-//  ClusterCartoDB
+//  CartoDBMapView.m
+//  CartoDBMapView
 //
 //  Created by JM on 25/06/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
@@ -8,12 +8,16 @@
 
 #import "CartoDBMapView.h"
 #import "MKMapView+Cluster.h"
+#import "CartoDB.h"
+#import "CartoDBPOI.h"
+#import "MKMapView+Utils.h"
 
 
 
 @implementation CartoDBMapView
 
 @synthesize delegate = _delegate;
+@synthesize credentials = _credentials;
 
 
 
@@ -22,7 +26,7 @@
     if (self = [super initWithFrame:frame]) {
         _annotations = nil;    
         _zoom = self.visibleMapRect.size.width * self.visibleMapRect.size.height;
-        super.delegate = self;
+        [super setDelegate:self];
     }
     return self;
 }
@@ -32,12 +36,62 @@
     if (self = [super initWithCoder:aDecoder]) {
         _annotations = nil;    
         _zoom = self.visibleMapRect.size.width * self.visibleMapRect.size.height;
-        super.delegate = self;
+        [super setDelegate:self];
     }
     return self;
 }
 
 
+
+- (bool) startRequestWithSQL:(NSString*)sql 
+{
+    CartoDBDataProvider *provider = [[CartoDBDataProviderHTTP alloc] init];
+    provider.credentials = _credentials;
+    
+    CartoDBClient *client = [[CartoDBClient alloc] init];
+    client.provider = provider;
+    [provider release];
+    client.delegate = self;
+    
+    return [client startRequestWithSQL:sql];
+}
+
+
+- (void) cartoDBClient:(CartoDBClient*)client receivedResponse:(CartoDBResponse*)response
+{
+    NSMutableArray *pois = [[NSMutableArray alloc] initWithCapacity:response.count];
+    
+    for (int i = 0; i < response.count; ++i) {
+        NSDictionary *attrs = [response valueAtRow:i andColumn:nil];
+        
+        if ([[attrs objectForKey:kCartoDBColumName_GeomType] intValue] == CartoDBGeomType_Point) {
+            NSString *name = [attrs objectForKey:kCartoDBColumName_Name];
+            NSString *desc = [attrs objectForKey:kCartoDBColumName_Description];
+            NSNumber *lng = [attrs objectForKey:kCartoDBColumName_GeomLng];
+            NSNumber *lat = [attrs objectForKey:kCartoDBColumName_GeomLat];
+
+            CartoDBPOI *poi = [[CartoDBPOI alloc] initWithLocation:(CLLocationCoordinate2D){[lat doubleValue], [lng doubleValue]}];
+            poi.title = name;
+            poi.subtitle = desc;
+            [pois addObject:poi];
+            [poi release];
+        }
+    }
+    
+    if ([_delegate mapView:self receivedPOIs:pois]) {
+        [self addAnnotations:pois];
+    }
+
+    [client release];
+}
+
+
+- (void) cartoDBClient:(CartoDBClient*)client failedWithError:(NSError*)err
+{
+    [_delegate mapView:self failedRequestWithError:err];
+    
+    [client release];
+}
 
 
 
@@ -184,9 +238,18 @@
 }
 
 
+
+
+
+
+
+
+
+
 - (void)dealloc
 {
     [_annotations release];
+    [_credentials release];
     [super dealloc];
 }
 

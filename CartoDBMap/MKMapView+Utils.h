@@ -11,5 +11,6 @@
 @interface MKMapView (Utils)
 
 - (void) centerInCoordinate:(CLLocationCoordinate2D)center animated:(bool)animated;
+- (void) centerForPOIs:(NSArray*)pois animated:(bool)animated;
 
 @end

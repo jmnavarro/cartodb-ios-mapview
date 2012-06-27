@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "CartoDBMapView.h"
 
-@interface ViewController : UIViewController<MKMapViewDelegate>
 
-@property (nonatomic, retain) IBOutlet MKMapView *mapView;
+
+@interface ViewController : UIViewController<CartoDBMapViewDelegate>
+
+@property (nonatomic, retain) IBOutlet CartoDBMapView *mapView;
+@property (nonatomic, retain) IBOutlet UITextField *sql;
 
 @end

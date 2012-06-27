@@ -26,6 +26,20 @@
 		8849C1E51599D12A00620991 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8849C1E61599D12A00620991 /* ViewController_iPad.xib */; };
 		8849C1E71599D13000620991 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8849C1E81599D13000620991 /* ViewController_iPhone.xib */; };
 		8849C1E91599D13B00620991 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8849C1EA1599D13B00620991 /* InfoPlist.strings */; };
+		88EB9F26159B6F82002BBBE3 /* CartoDBClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EB9F18159B6F82002BBBE3 /* CartoDBClient.m */; };
+		88EB9F27159B6F82002BBBE3 /* CartoDBCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EB9F1A159B6F82002BBBE3 /* CartoDBCredentials.m */; };
+		88EB9F28159B6F82002BBBE3 /* CartoDBCredentialsApiKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EB9F1C159B6F82002BBBE3 /* CartoDBCredentialsApiKey.m */; };
+		88EB9F29159B6F82002BBBE3 /* CartoDBDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EB9F1E159B6F82002BBBE3 /* CartoDBDataProvider.m */; };
+		88EB9F2A159B6F82002BBBE3 /* CartoDBDataProviderHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EB9F20159B6F82002BBBE3 /* CartoDBDataProviderHTTP.m */; };
+		88EB9F2B159B6F82002BBBE3 /* CartoDBResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EB9F22159B6F82002BBBE3 /* CartoDBResponse.m */; };
+		88EB9F2C159B6F82002BBBE3 /* NSError+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EB9F25159B6F82002BBBE3 /* NSError+Log.m */; };
+		88EB9F49159B6FA2002BBBE3 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EB9F33159B6FA2002BBBE3 /* SBJsonParser.m */; };
+		88EB9F4A159B6FA2002BBBE3 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EB9F35159B6FA2002BBBE3 /* SBJsonStreamParser.m */; };
+		88EB9F4B159B6FA2002BBBE3 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EB9F37159B6FA2002BBBE3 /* SBJsonStreamParserAccumulator.m */; };
+		88EB9F4C159B6FA2002BBBE3 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EB9F39159B6FA2002BBBE3 /* SBJsonStreamParserAdapter.m */; };
+		88EB9F4D159B6FA2002BBBE3 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EB9F3B159B6FA2002BBBE3 /* SBJsonStreamParserState.m */; };
+		88EB9F51159B6FA2002BBBE3 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EB9F43159B6FA2002BBBE3 /* SBJsonTokeniser.m */; };
+		88EB9F52159B6FA2002BBBE3 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EB9F45159B6FA2002BBBE3 /* SBJsonUTF8Stream.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +75,36 @@
 		8849C1E61599D12A00620991 /* ViewController_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController_iPad.xib; sourceTree = "<group>"; };
 		8849C1E81599D13000620991 /* ViewController_iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController_iPhone.xib; sourceTree = "<group>"; };
 		8849C1EA1599D13B00620991 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		88EB9F16159B6F82002BBBE3 /* CartoDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartoDB.h; sourceTree = "<group>"; };
+		88EB9F17159B6F82002BBBE3 /* CartoDBClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartoDBClient.h; sourceTree = "<group>"; };
+		88EB9F18159B6F82002BBBE3 /* CartoDBClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartoDBClient.m; sourceTree = "<group>"; };
+		88EB9F19159B6F82002BBBE3 /* CartoDBCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartoDBCredentials.h; sourceTree = "<group>"; };
+		88EB9F1A159B6F82002BBBE3 /* CartoDBCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartoDBCredentials.m; sourceTree = "<group>"; };
+		88EB9F1B159B6F82002BBBE3 /* CartoDBCredentialsApiKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartoDBCredentialsApiKey.h; sourceTree = "<group>"; };
+		88EB9F1C159B6F82002BBBE3 /* CartoDBCredentialsApiKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartoDBCredentialsApiKey.m; sourceTree = "<group>"; };
+		88EB9F1D159B6F82002BBBE3 /* CartoDBDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartoDBDataProvider.h; sourceTree = "<group>"; };
+		88EB9F1E159B6F82002BBBE3 /* CartoDBDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartoDBDataProvider.m; sourceTree = "<group>"; };
+		88EB9F1F159B6F82002BBBE3 /* CartoDBDataProviderHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartoDBDataProviderHTTP.h; sourceTree = "<group>"; };
+		88EB9F20159B6F82002BBBE3 /* CartoDBDataProviderHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartoDBDataProviderHTTP.m; sourceTree = "<group>"; wrapsLines = 0; };
+		88EB9F21159B6F82002BBBE3 /* CartoDBResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartoDBResponse.h; sourceTree = "<group>"; };
+		88EB9F22159B6F82002BBBE3 /* CartoDBResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartoDBResponse.m; sourceTree = "<group>"; };
+		88EB9F24159B6F82002BBBE3 /* NSError+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Log.h"; sourceTree = "<group>"; };
+		88EB9F25159B6F82002BBBE3 /* NSError+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Log.m"; sourceTree = "<group>"; };
+		88EB9F31159B6FA2002BBBE3 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		88EB9F32159B6FA2002BBBE3 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		88EB9F33159B6FA2002BBBE3 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		88EB9F34159B6FA2002BBBE3 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		88EB9F35159B6FA2002BBBE3 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		88EB9F36159B6FA2002BBBE3 /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		88EB9F37159B6FA2002BBBE3 /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		88EB9F38159B6FA2002BBBE3 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		88EB9F39159B6FA2002BBBE3 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		88EB9F3A159B6FA2002BBBE3 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		88EB9F3B159B6FA2002BBBE3 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		88EB9F42159B6FA2002BBBE3 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		88EB9F43159B6FA2002BBBE3 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		88EB9F44159B6FA2002BBBE3 /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		88EB9F45159B6FA2002BBBE3 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +181,7 @@
 		8849C1C71599C13800620991 /* CartoDBMap */ = {
 			isa = PBXGroup;
 			children = (
+				88EB9F15159B6F82002BBBE3 /* cartodb-client */,
 				8849C1E01599C9C800620991 /* res */,
 				8849C1C81599C13800620991 /* CartoDBMapView.h */,
 				8849C1C91599C13800620991 /* CartoDBMapView.m */,
@@ -163,6 +208,53 @@
 			);
 			name = res;
 			path = SampleCartoDBMapView/res;
+			sourceTree = SOURCE_ROOT;
+		};
+		88EB9F15159B6F82002BBBE3 /* cartodb-client */ = {
+			isa = PBXGroup;
+			children = (
+				88EB9F2E159B6FA2002BBBE3 /* json-framework */,
+				88EB9F16159B6F82002BBBE3 /* CartoDB.h */,
+				88EB9F17159B6F82002BBBE3 /* CartoDBClient.h */,
+				88EB9F18159B6F82002BBBE3 /* CartoDBClient.m */,
+				88EB9F19159B6F82002BBBE3 /* CartoDBCredentials.h */,
+				88EB9F1A159B6F82002BBBE3 /* CartoDBCredentials.m */,
+				88EB9F1B159B6F82002BBBE3 /* CartoDBCredentialsApiKey.h */,
+				88EB9F1C159B6F82002BBBE3 /* CartoDBCredentialsApiKey.m */,
+				88EB9F1D159B6F82002BBBE3 /* CartoDBDataProvider.h */,
+				88EB9F1E159B6F82002BBBE3 /* CartoDBDataProvider.m */,
+				88EB9F1F159B6F82002BBBE3 /* CartoDBDataProviderHTTP.h */,
+				88EB9F20159B6F82002BBBE3 /* CartoDBDataProviderHTTP.m */,
+				88EB9F21159B6F82002BBBE3 /* CartoDBResponse.h */,
+				88EB9F22159B6F82002BBBE3 /* CartoDBResponse.m */,
+				88EB9F24159B6F82002BBBE3 /* NSError+Log.h */,
+				88EB9F25159B6F82002BBBE3 /* NSError+Log.m */,
+			);
+			name = "cartodb-client";
+			path = "cartodb-objectivec-client/cartoDB_client/client";
+			sourceTree = SOURCE_ROOT;
+		};
+		88EB9F2E159B6FA2002BBBE3 /* json-framework */ = {
+			isa = PBXGroup;
+			children = (
+				88EB9F31159B6FA2002BBBE3 /* SBJson.h */,
+				88EB9F32159B6FA2002BBBE3 /* SBJsonParser.h */,
+				88EB9F33159B6FA2002BBBE3 /* SBJsonParser.m */,
+				88EB9F34159B6FA2002BBBE3 /* SBJsonStreamParser.h */,
+				88EB9F35159B6FA2002BBBE3 /* SBJsonStreamParser.m */,
+				88EB9F36159B6FA2002BBBE3 /* SBJsonStreamParserAccumulator.h */,
+				88EB9F37159B6FA2002BBBE3 /* SBJsonStreamParserAccumulator.m */,
+				88EB9F38159B6FA2002BBBE3 /* SBJsonStreamParserAdapter.h */,
+				88EB9F39159B6FA2002BBBE3 /* SBJsonStreamParserAdapter.m */,
+				88EB9F3A159B6FA2002BBBE3 /* SBJsonStreamParserState.h */,
+				88EB9F3B159B6FA2002BBBE3 /* SBJsonStreamParserState.m */,
+				88EB9F42159B6FA2002BBBE3 /* SBJsonTokeniser.h */,
+				88EB9F43159B6FA2002BBBE3 /* SBJsonTokeniser.m */,
+				88EB9F44159B6FA2002BBBE3 /* SBJsonUTF8Stream.h */,
+				88EB9F45159B6FA2002BBBE3 /* SBJsonUTF8Stream.m */,
+			);
+			name = "json-framework";
+			path = "cartodb-objectivec-client/json-framework/Classes";
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -240,6 +332,20 @@
 				8849C1D81599C13800620991 /* CartoDBPOIGroup.m in Sources */,
 				8849C1D91599C13800620991 /* MKMapView+Cluster.m in Sources */,
 				8849C1DA1599C13800620991 /* MKMapView+Utils.m in Sources */,
+				88EB9F26159B6F82002BBBE3 /* CartoDBClient.m in Sources */,
+				88EB9F27159B6F82002BBBE3 /* CartoDBCredentials.m in Sources */,
+				88EB9F28159B6F82002BBBE3 /* CartoDBCredentialsApiKey.m in Sources */,
+				88EB9F29159B6F82002BBBE3 /* CartoDBDataProvider.m in Sources */,
+				88EB9F2A159B6F82002BBBE3 /* CartoDBDataProviderHTTP.m in Sources */,
+				88EB9F2B159B6F82002BBBE3 /* CartoDBResponse.m in Sources */,
+				88EB9F2C159B6F82002BBBE3 /* NSError+Log.m in Sources */,
+				88EB9F49159B6FA2002BBBE3 /* SBJsonParser.m in Sources */,
+				88EB9F4A159B6FA2002BBBE3 /* SBJsonStreamParser.m in Sources */,
+				88EB9F4B159B6FA2002BBBE3 /* SBJsonStreamParserAccumulator.m in Sources */,
+				88EB9F4C159B6FA2002BBBE3 /* SBJsonStreamParserAdapter.m in Sources */,
+				88EB9F4D159B6FA2002BBBE3 /* SBJsonStreamParserState.m in Sources */,
+				88EB9F51159B6FA2002BBBE3 /* SBJsonTokeniser.m in Sources */,
+				88EB9F52159B6FA2002BBBE3 /* SBJsonUTF8Stream.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
